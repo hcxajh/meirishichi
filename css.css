@@ -1,18 +1,19 @@
 body{margin: 0;padding: 0;}
 a{text-decoration: none; color: #000;}
-.content{text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute;width: 100%;}
+.content{text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute;width:calc(var(--hg) * 8); z-index: 99;}
 .jiantifanti{ text-align: right;padding-right: 2vw;line-height: var(--hg);position: absolute;z-index: 99; right: var(--small);}
-.suiji{ text-align: center;position: fixed; bottom:var(--small); width: 100%;line-height:var(--hg);z-index: 99}
-.suiji a{display: inline-block; border: 1px solid #ddd; line-height: var(--hg); border-radius: calc(var(--hg) / 2); padding:0 calc(var(--hg) / 2)}
-h1{font-size:var(--big);}
-.author{font-size:var(--small); color: rgba(0,0,0,0.6);}
-.paragraphs{ font-size: var(--small); line-height: var(--nrhg);}
+.suiji{ text-align: center;position: fixed; bottom:var(--small); width: 100%;line-height:var(--hg);z-index: 99;font-size: var(--small); }
+.suiji a{background: #fff;display: inline-block; border: 1px solid #ddd; line-height: var(--hg); border-radius: calc(var(--hg) / 2); padding:0 calc(var(--hg) / 2)}
+h1{font-size:var(--big);margin: 0;}
+.author{font-size:var(--small); color: rgba(0,0,0,0.6); line-height: var(--nrhg);}
+.paragraphs{ font-size: var(--small); line-height: var(--nrhg); height: 40vh; overflow: scroll;}
+.paragraphs pre{margin: 0;}
 .zuoyou{position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);width: 100%;}
 .zuoyou a{height: 100vh; width: calc(var(--hg) * 2)}
 .zuoyou a:first-child{float: left;background-image: linear-gradient(90deg, #EFEFEF 0%, rgba(216,216,216,0.00) 100%);}
-.zuoyou a:last-child{float: right;background-image: linear-gradient(270deg, #EFEFEF 0%, rgba(216,216,216,0.00) 100%);}
+.zuoyou a:nth-child(2){float: right;background-image: linear-gradient(270deg, #EFEFEF 0%, rgba(216,216,216,0.00) 100%);}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1080px) {
     :root{
         --hg:10vw;
         --big: 10vw;
@@ -20,7 +21,7 @@ h1{font-size:var(--big);}
         --nrhg: 10vw;
     }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1080px) {
     :root{
         --hg:4vw;
         --big: 4vw;

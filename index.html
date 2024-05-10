@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日诗词</title>
+    <meta name="keywords" content="唐诗">
+    <meta name="description" content="每日一首诗词">
+</head>
+<body>
+    <p>正在为您规划今天的诗词...</p>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var total_pages = 10;  // 总页面数
+        var randomPageNumber = Math.floor(Math.random() * total_pages) + 1;  // 生成1到100的随机数
+        window.location.href = randomPageNumber + '.html';  // 重定向到随机页面
+    });
+    </script>
+</body>
+</html>
