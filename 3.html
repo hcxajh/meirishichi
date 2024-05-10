@@ -11,6 +11,7 @@
 重城自不掩，出向小平津。">
     <script src="tw_cn.js"></script>
     <link rel="stylesheet" type="text/css" href="css.css" />
+
 </head>
 <body>
     <div class="jiantifanti"><a href="javascript:translatePage();" id="translateLink">繁体</a></div>
@@ -25,7 +26,11 @@
     </div>
     
     <div class="suiji">
-        <a href="#" id="randomPageLink">再来一个</a>
+        <a onclick="randomPage" class="randomPageLink">再来一个</a>
+    </div>
+    <div class="zuoyou">
+        <a onclick="randomPage" class="randomPageLink"> </a>
+        <a onclick="randomPage" class="randomPageLink"> </a>
     </div>
 
 
@@ -39,10 +44,16 @@ var translateButtonId = "translateLink";
 translateInitilization();
 
 document.addEventListener('DOMContentLoaded', function () {
-    var total_pages = 10;
+            randomPage();  // 初始化所有随机链接
+        });
+function randomPage() {
+    var total_pages = 10;  // 假设总页数为 10
     var random_page = Math.floor(Math.random() * total_pages) + 1;
-    document.getElementById('randomPageLink').href = '' + random_page + '.html';
-});
+    var links = document.querySelectorAll('.randomPageLink');  // 选择所有具有 randomPageLink 类的元素
+    links.forEach(function(link) {
+        link.href = random_page + '.html';  // 更新所有链接
+    });
+}
 </script>
 </body>
 </html>

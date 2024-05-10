@@ -16,6 +16,8 @@ def get_poems(page, page_size):
 
 
 random_page = random.randint(1, 10)
+
+
 def generate_html_files():
     env = Environment(loader=FileSystemLoader('.'))
     template = env.get_template('muban.htm')
@@ -25,5 +27,6 @@ def generate_html_files():
         rendered = template.render(page_number=page, poems=poems, total_pages=10, random_page=random_page)
         with open(f'{page}.html', 'w', encoding='utf-8') as file:
             file.write(rendered)
+
 
 generate_html_files()
