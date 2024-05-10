@@ -1,0 +1,26 @@
+body{margin: 0;padding: 0;}
+a{text-decoration: none; color: #000;}
+.content{text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute;width: 100%;}
+.jiantifanti{ text-align: right;padding-right: 2vw;line-height: var(--hg);}
+.suiji{ text-align: center;position: fixed; bottom:var(--small); width: 100%;line-height:var(--hg);}
+.suiji a{display: inline-block; border: 1px solid #ddd; line-height: var(--hg); border-radius: calc(var(--hg) / 2); padding:0 calc(var(--hg) / 2)}
+h1{font-size:var(--big);}
+.author{font-size:var(--small); color: rgba(0,0,0,0.6);}
+.paragraphs{ font-size: var(--small); line-height: var(--nrhg);}
+
+@media screen and (max-width: 600px) {
+    :root{
+        --hg:10vw;
+        --big: 10vw;
+        --small: 5vw;
+        --nrhg: 10vw;
+    }
+}
+@media screen and (min-width: 600px) {
+    :root{
+        --hg:4vw;
+        --big: 4vw;
+        --small: 2vw;
+        --nrhg: 3.5vw;
+    }
+}
