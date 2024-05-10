@@ -26,11 +26,17 @@
     </div>
     
     <div class="suiji">
-        <a onclick="randomPage" class="randomPageLink">再来一个</a>
+        <a onclick="randomPage" class="randomPageLink">随机来一个~</a>
     </div>
     <div class="zuoyou">
-        <a onclick="randomPage" class="randomPageLink"> </a>
-        <a onclick="randomPage" class="randomPageLink"> </a>
+        
+        
+        <a href="6.html"> </a>
+        
+        
+        <a href="8.html"> </a>
+        
+        
     </div>
 
 
@@ -42,6 +48,13 @@ var msgToTraditionalChinese = "繁體";
 var msgToSimplifiedChinese = "简体";
 var translateButtonId = "translateLink";
 translateInitilization();
+
+function diyiye() {
+    alert('已经是第一页了~');
+}
+function zuihouyiye() {
+    alert('没有更多了~');
+}
 
 document.addEventListener('DOMContentLoaded', function () {
             randomPage();  // 初始化所有随机链接
