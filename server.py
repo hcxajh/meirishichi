@@ -1,7 +1,8 @@
 import sqlite3
 import random
 from jinja2 import Environment, FileSystemLoader
-
+import opencc
+converter = opencc.OpenCC('t2s.json')
 
 def get_poems(page, page_size):
     offset = (page - 1) * page_size
@@ -12,8 +13,11 @@ def get_poems(page, page_size):
     poems = [dict(row) for row in cursor.fetchall()]
     cursor.close()
     conn.close()
+    for poem in poems:
+        poem['author'] = converter.convert(poem['author'])
+        poem['title'] = converter.convert(poem['title'])
+        poem['paragraphs'] = converter.convert(poem['paragraphs'])
     return poems
-
 
 random_page = random.randint(1, 10)
 def generate_html_files():

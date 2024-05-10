@@ -1,5 +1,6 @@
 import sqlite3
-
+import opencc
+converter = opencc.OpenCC('t2s')
 
 def paginate_poems(page_number, page_size):
     # 计算从哪一条记录开始
@@ -15,9 +16,12 @@ def paginate_poems(page_number, page_size):
     # 获取查询结果
     rows = cursor.fetchall()
     for row in rows:
-        print(f"Author: {row[0]}, Title: {row[1]}")
+        formatted_str = f"Author: {row[0]}, Title: {row[1]}"
+        converted_str = converter.convert(formatted_str)
 
-    # 关闭 Cursor 和连接
+        print(converted_str)
+
+        # 关闭 Cursor 和连接
     cursor.close()
     conn.close()
 
